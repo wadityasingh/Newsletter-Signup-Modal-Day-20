@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Craft Dispatch — Front-End Architecture &amp; Minimalist Interfaces</title>
+    <meta name="description" content="A clean, responsive newsletter signup modal built with HTML5, CSS3, and Vanilla JavaScript. Features timed popups, email validation, and accessible controls." />
+    <meta property="og:title" content="The Craft Dispatch — Front-End Architecture &amp; Minimalist Interfaces" />
+    <meta property="og:description" content="A clean, responsive newsletter signup modal built with HTML5, CSS3, and Vanilla JavaScript." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <header class="site-header">
+      <div class="nav-container">
+        <a href="#top" class="brand-wordmark">The Craft Dispatch</a>
+
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#essays" class="nav-link">Essays</a>
+          <a href="#topics" class="nav-link">Topics</a>
+          <a href="#about" class="nav-link">About</a>
+          <button type="button" id="replayPopupBtn" class="nav-link">Replay Timed Popup</button>
+        </nav>
+
+        <button type="button" id="navSubscribeBtn" class="nav-cta-btn">
+          Subscribe
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Layout -->
+    <main class="main-wrapper" id="top">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div>
+          <div class="kicker-tag">
+            <span>Weekly Design &amp; Engineering Journal</span>
+            <span aria-hidden="true">·</span>
+            <span>By Aditya Singh</span>
+          </div>
+
+          <h1 class="hero-title">
+            Thoughtful Writing on Web Craft, Typography &amp; Clean Interfaces
+          </h1>
+
+          <p class="hero-lead">
+            Every Thursday, we publish one focused essay exploring modern front-end
+            architecture, accessible user interaction patterns, and calm digital design.
+          </p>
+
+          <div class="hero-actions">
+            <button type="button" id="heroSubscribeBtn" class="btn-primary">
+              Subscribe to the Newsletter
+            </button>
+            <a href="#essays" class="btn-secondary">
+              Read Latest Issues
+            </a>
+          </div>
+        </div>
+
+        <!-- Featured Card -->
+        <article class="featured-card">
+          <div>
+            <div class="card-meta">
+              <span>Featured Essay · Issue No. 20</span>
+              <span>5 min read</span>
+            </div>
+
+            <h2 class="card-title">
+              Designing Calm Digital Spaces That Respect Reader Attention
+            </h2>
+
+            <p class="card-excerpt">
+              Why thoughtful timing, clear dismissal paths, and restraint in typography create stronger long-term engagement than aggressive interruptions.
+            </p>
+          </div>
+
+          <a href="#essays" class="btn-secondary">
+            Read Full Essay
+          </a>
+        </article>
+      </section>
+
+      <!-- Recent Dispatches Grid -->
+      <section class="section-padding" id="essays">
+        <div class="section-header">
+          <p class="section-kicker">Archive &amp; Perspectives</p>
+          <h2 class="section-title">Recent Dispatches</h2>
+        </div>
+
+        <div class="articles-grid" id="topics">
+          <article class="article-card">
+            <div>
+              <div class="article-meta">
+                <span>Interface Design</span>
+                <span aria-hidden="true">·</span>
+                <span>5 min read</span>
+              </div>
+              <h3 class="article-card-title">Calm Digital Spaces</h3>
+              <p class="article-card-desc">
+                Allowing pages to settle before presenting gentle invitations earns visitor trust instead of immediate dismissive clicks.
+              </p>
+            </div>
+            <button type="button" class="inline-link-btn" onclick="document.getElementById('navSubscribeBtn').click()">
+              Join Newsletter &rarr;
+            </button>
+          </article>
+
+          <article class="article-card">
+            <div>
+              <div class="article-meta">
+                <span>Web Engineering</span>
+                <span aria-hidden="true">·</span>
+                <span>4 min read</span>
+              </div>
+              <h3 class="article-card-title">Lightweight Web Fundamentals</h3>
+              <p class="article-card-desc">
+                Semantic HTML structure, fluid CSS layouts, and native DOM APIs deliver instant loads across all screens.
+              </p>
+            </div>
+            <button type="button" class="inline-link-btn" onclick="document.getElementById('navSubscribeBtn').click()">
+              Join Newsletter &rarr;
+            </button>
+          </article>
+
+          <article class="article-card">
+            <div>
+              <div class="article-meta">
+                <span>Editorial Systems</span>
+                <span aria-hidden="true">·</span>
+                <span>6 min read</span>
+              </div>
+              <h3 class="article-card-title">Typographic Hierarchy &amp; Math</h3>
+              <p class="article-card-desc">
+                Establishing visual clarity through consistent type scales, generous margins, and high-contrast focus rings.
+              </p>
+            </div>
+            <button type="button" class="inline-link-btn" onclick="document.getElementById('navSubscribeBtn').click()">
+              Join Newsletter &rarr;
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <!-- Newsletter Callout Banner -->
+      <section class="callout-banner" id="about">
+        <div>
+          <p class="section-kicker">Never Miss an Issue</p>
+          <h2 class="callout-title">Receive the Thursday Dispatch in Your Inbox</h2>
+          <p class="callout-desc">
+            Written for developers and designers who care about clean HTML, responsive CSS, and respectful user interfaces. No spam, no tracking pixels, and one-click unsubscribe at any time.
+          </p>
+        </div>
+
+        <div class="callout-actions">
+          <button type="button" id="bannerSubscribeBtn" class="btn-primary">
+            Open Signup Form
+          </button>
+          <button type="button" onclick="document.getElementById('replayPopupBtn').click()" class="btn-secondary">
+            Test 2.5s Timed Popup Again
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div>
+          <strong>The Craft Dispatch</strong>
+          <span aria-hidden="true">·</span>
+          <span>Designed &amp; Built with HTML5, CSS3 &amp; Vanilla JavaScript by Aditya Singh</span>
+        </div>
+        <div class="footer-nav">
+          <button type="button" class="footer-btn" onclick="document.getElementById('navSubscribeBtn').click()">Newsletter</button>
+          <button type="button" id="resetPopupFooterBtn" class="footer-btn">Reset Popup Timer</button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =====================================================================
+         NEWSLETTER SIGNUP MODAL
+         - Hidden on initial load
+         - Triggered after 2.5s delay via setTimeout() if not dismissed in session
+         - Real-time email validation
+         - Multiple dismissal methods (close button, overlay click, Esc key)
+         ===================================================================== -->
+    <div id="modalOverlay" class="modal-overlay" hidden aria-hidden="true">
+      <div
+        id="modalDialog"
+        class="modal-dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+        aria-describedby="modalDesc"
+      >
+        <!-- Close Button -->
+        <button
+          type="button"
+          id="modalCloseBtn"
+          class="modal-close-btn"
+          aria-label="Close newsletter signup modal"
+        >
+          &times;
+        </button>
+
+        <!-- Form View -->
+        <div id="modalFormView">
+          <div class="modal-badge-icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+          </div>
+
+          <p class="modal-kicker">Weekly Newsletter</p>
+          <h2 id="modalTitle" class="modal-heading">Join The Craft Dispatch</h2>
+          <p id="modalDesc" class="modal-copy">
+            Get our weekly essay on interface design, front-end engineering, and web fundamentals delivered straight to your inbox.
+          </p>
+
+          <form id="newsletterForm" novalidate>
+            <div class="form-group">
+              <label for="emailInput" class="form-label">Email address</label>
+              <input
+                type="email"
+                id="emailInput"
+                name="email"
+                class="form-input"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required
+                aria-describedby="emailError"
+              />
+              <p id="emailError" class="form-error" role="alert" hidden></p>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              Subscribe Now
+            </button>
+          </form>
+
+          <button type="button" id="modalDismissLink" class="dismiss-text-btn">
+            No thanks, maybe later
+          </button>
+        </div>
+
+        <!-- Success Confirmation View (Initially Hidden) -->
+        <div id="modalSuccessView" hidden>
+          <div class="success-icon-badge" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6 9 17l-5-5"></path>
+            </svg>
+          </div>
+
+          <h2 class="modal-heading">You’re on the list!</h2>
+          <p class="modal-copy">
+            Thank you for subscribing. We’ve registered
+            <strong id="userEmailDisplay" class="user-email-target"></strong> to receive our next weekly issue.
+          </p>
+
+          <button type="button" id="modalDoneBtn" class="submit-btn">
+            Continue Reading
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript Application Entry Point -->
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>
